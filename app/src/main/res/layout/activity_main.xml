@@ -6,10 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/tv_hello"
+    <TextView
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:id="@+id/tv_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="测试点击事件"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/tv_hello"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:src="@drawable/ic_apple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
