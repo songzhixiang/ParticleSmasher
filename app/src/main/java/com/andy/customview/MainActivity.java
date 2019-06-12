@@ -12,11 +12,7 @@ import com.andy.library.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.tv_hello)
-    ImageView mImageView;
 
-    @BindView(R.id.tv_test)
-    TextView mTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         ExplosionField explosionField  = new ExplosionField(this,new FallingParticleFactory());
-        explosionField.addListener(mImageView);
+        explosionField.addListener(findViewById(R.id.tv_hello));
     }
 
-    @onClick(R.id.tv_test)
-    public void doTest(View view){
 
-    }
 }
