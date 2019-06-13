@@ -44,7 +44,7 @@ public class RViewAdapter<T> extends RecyclerView.Adapter<RViewHolder> {
         addItemStyles(item);
     }
 
-    private void addItemStyles(RViewItem<T> item) {
+    public void addItemStyles(RViewItem<T> item) {
         itemStyle.addStyles(item);
     }
 

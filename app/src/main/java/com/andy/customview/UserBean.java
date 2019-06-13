@@ -11,12 +11,12 @@ public class UserBean implements Serializable {
 
     private String userName;
     private String sex;
-    private int age;
+    private int type;
 
-    public UserBean(String userName, String sex, int age) {
+    public UserBean(String userName, String sex, int type) {
         this.userName = userName;
         this.sex = sex;
-        this.age = age;
+        this.type = type;
     }
 
     public UserBean() {
@@ -38,11 +38,11 @@ public class UserBean implements Serializable {
         this.sex = sex;
     }
 
-    public int getAge() {
-        return age;
+    public int getType() {
+        return type;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setType(int type) {
+        this.type = type;
     }
 }
