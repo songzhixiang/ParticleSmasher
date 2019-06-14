@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.andy.customview.doubleprocess.LocalService;
+import com.andy.customview.doubleprocess.RemoteService;
 import com.andy.library.plugin.PluginManager;
 import com.andy.library.plugin.ProxyActivity;
 
@@ -37,5 +39,22 @@ public class TestPluginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        //通过 1px Activity 进行提权
+//        KeepManager.getInstance().registerKeep(this);
+
+        //第二种方法，前台服务
+//        startService(new Intent(this,ForegroundService.class));
+
+        //双进程守护
+        startService(new Intent(this, LocalService.class));
+        startService(new Intent(this, RemoteService.class));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+//        KeepManager.getInstance().unregisterKeep(this);
     }
 }

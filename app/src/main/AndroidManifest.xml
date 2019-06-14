@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.andy.customview">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,8 +18,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".KeepActivity"
+            android:excludeFromRecents="true"
+            android:taskAffinity="com.andy.customview"
+            android:theme="@style/KeepTheme"
+            />
 
         <activity android:name="com.andy.library.plugin.ProxyActivity"/>
+        <service android:name=".ForegroundService"/>
+        <service android:name=".ForegroundService$InnnerService"/>
+
+
+        <service
+            android:process=":remote"
+            android:name=".doubleprocess.RemoteService"/>
+        <service android:name=".doubleprocess.LocalService"/>
     </application>
 
 </manifest>
