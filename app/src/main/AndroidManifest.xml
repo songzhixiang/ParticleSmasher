@@ -16,11 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".compress.PhotoActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".KeepActivity"
             android:excludeFromRecents="true"
@@ -29,6 +25,20 @@
             />
 
         <activity android:name="com.andy.library.plugin.ProxyActivity"/>
+        <activity android:name=".eventbus.ResultActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".eventbus.EventBusActivity" >
+
+
+
+        </activity>
+
         <service android:name=".ForegroundService"/>
         <service android:name=".ForegroundService$InnnerService"/>
 
